@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/17 13:09:08 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/24 20:30:30 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	find_min(t_list **a)
 	min = 2147483648;
 	count = *a;
 	if (count == NULL)
-		exit(0);
+		return(-1);
 	if (count->next == NULL)
 		return (count->index);
 	while (count != NULL)
@@ -40,7 +40,7 @@ int	find_next_min(t_list **a, long long min)
 	next_min = 2147483648;
 	count = *a;
 	if (count == NULL || count->next == NULL)
-		exit(0);
+		return (-1);
 	while (count != NULL)
 	{
 		if (count->index < next_min && count->index > min)

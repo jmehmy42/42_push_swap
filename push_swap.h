@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 10:36:17 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/24 20:52:35 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void				rrr(t_list **a, t_list **b);
 void				ft_free(t_list **a);
 int					ft_atoi(char *str);
 char				**ft_split(const char *s, char c);
+void				free_string(char **str);
 
 
 #endif

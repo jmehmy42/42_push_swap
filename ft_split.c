@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:54:13 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/17 16:41:33 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/24 21:31:35 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	ft_allocate(char **tab, const char *s, char c)
 		{
 			i = 0;
 			while (i < word)
-				free(tab[i]);
+				free(tab[i++]);
 			free(tab);
 			return (0);
 		}
@@ -93,6 +93,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	if (!ft_allocate(new_s, s, c))
 	{
+		free_string(new_s);
 		return (NULL);
 	}
 	return (new_s);

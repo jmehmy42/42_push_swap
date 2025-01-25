@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:30:33 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 10:58:01 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/24 21:04:08 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(int content)
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
-		exit(0);
+		return (NULL);
 	node->data = content;
 	node->next = NULL;
 	return (node);
@@ -66,6 +66,20 @@ t_list	*ft_lstlast(t_list *lst)
 	return (str);
 }
 
+// void ft_free(t_list **list)
+// {
+//     t_list *current;
+//     t_list *next;
+
+//     current = *list;
+//     while (current)
+//     {
+//         next = current->next;  // Save the next node
+//         free(current);          // Free the current node
+//         current = next;         // Move to the next node
+//     }
+//     *list = NULL;  // Set the list pointer to NULL to avoid dangling pointer
+// }
 void	ft_free(t_list **a)
 {
 	t_list	*head;

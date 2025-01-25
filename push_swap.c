@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:34:57 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 11:35:04 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/24 21:36:08 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,24 @@ int	process_single_input(t_list **a, char *list)
 	t_list	*new;
 	char	**str;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	str = ft_split(list, ' ');
+	if(!str)
+		return (-1);
 	find_repeats(str);
 	while (str[i])
 	{
 		new = ft_lstnew(ft_atoi(str[i]));
 		if (!new)
-			ft_perror();
+		{
+    		 free_string(str);
+			 ft_perror();
+		}
 		ft_lstadd_back(a, new);
 		i++;
 	}
-	while (str[j])
-	{
-		free(str[j]);
-		j++;
-	}
-	free(str);
+	free_string(str);
 	return (i);
 }
 
@@ -51,7 +49,10 @@ int	process_multiple_inputs(t_list **a, char **list)
 	{
 		new = ft_lstnew(ft_atoi(list[i]));
 		if (!new)
+		{
+			ft_free(a);
 			ft_perror();
+		}
 		ft_lstadd_back(a, new);
 		i++;
 	}
@@ -81,7 +82,6 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (-1);
-
 	a = NULL;
 	b = NULL;
 	if (ac == 2)
