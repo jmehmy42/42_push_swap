@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 20:48:52 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 10:14:41 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:36:40 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate(t_list **stack)
 	t_list	*head;
 	t_list	*last;
 
-	if(!stack)
+	if (!stack)
 		ft_perror();
 	if (ft_lstsize(stack) < 2)
 		return ;

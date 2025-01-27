@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:37:30 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/24 20:52:14 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:34:01 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_perror(void)
 {
 	write(2, "Error\n", 6);
-	exit(0) ;
+	exit(EXIT_FAILURE);
 }
 
 void	free_string(char **str)

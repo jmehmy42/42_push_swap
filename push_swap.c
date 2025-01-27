@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:34:57 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/24 21:36:08 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:35:54 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,19 @@ int	process_single_input(t_list **a, char *list)
 	int		i;
 
 	i = 0;
+	if (list == NULL || *list == '\0')
+		ft_perror();
 	str = ft_split(list, ' ');
-	if(!str)
-		return (-1);
+	if (!str)
+		return (free_string(str), -1);
 	find_repeats(str);
 	while (str[i])
 	{
 		new = ft_lstnew(ft_atoi(str[i]));
 		if (!new)
 		{
-    		 free_string(str);
-			 ft_perror();
+			ft_free(a);
+			ft_perror();
 		}
 		ft_lstadd_back(a, new);
 		i++;
@@ -80,10 +82,10 @@ int	main(int ac, char **av)
 	t_list	*b;
 	int		count;
 
-	if (ac < 2)
-		return (-1);
 	a = NULL;
 	b = NULL;
+	if (ac < 2 || (ac == 2 && (av[1] == NULL || *av[1] == '\0')))
+		ft_perror();
 	if (ac == 2)
 		count = process_single_input(&a, av[1]);
 	else

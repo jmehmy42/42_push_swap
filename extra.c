@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:30:33 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/24 21:04:08 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:34:12 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,18 @@ t_list	*ft_lstlast(t_list *lst)
 	return (str);
 }
 
-// void ft_free(t_list **list)
-// {
-//     t_list *current;
-//     t_list *next;
+void	ft_free(t_list **lst)
+{
+	t_list	*temp;
 
-//     current = *list;
-//     while (current)
-//     {
-//         next = current->next;  // Save the next node
-//         free(current);          // Free the current node
-//         current = next;         // Move to the next node
-//     }
-//     *list = NULL;  // Set the list pointer to NULL to avoid dangling pointer
-// }
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
+}
+/*
 void	ft_free(t_list **a)
 {
 	t_list	*head;
@@ -94,3 +92,4 @@ void	ft_free(t_list **a)
 	}
 	*a = NULL;
 }
+*/

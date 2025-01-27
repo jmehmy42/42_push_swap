@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:29:00 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 10:05:20 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:39:18 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	reverse_rotate(t_list **stack)
 	t_list	*head;
 	t_list	*last;
 
-	if(!stack)
+	if (!stack)
 		ft_perror();
 	if (ft_lstsize(stack) < 2)
 		return ;
@@ -41,6 +41,7 @@ void	rra(t_list **a)
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
+
 void	rrb(t_list **b)
 {
 	reverse_rotate(b);

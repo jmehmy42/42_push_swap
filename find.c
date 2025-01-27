@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/24 20:30:30 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:34:31 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	find_min(t_list **a)
 	min = 2147483648;
 	count = *a;
 	if (count == NULL)
-		return(-1);
+		return (-1);
 	if (count->next == NULL)
 		return (count->index);
 	while (count != NULL)
@@ -90,9 +90,9 @@ int	find_distance(t_list **a, int c)
 
 int	find_bits(t_list **a)
 {
-	t_list *head;
-	int max;
-	int i;
+	t_list	*head;
+	int		max;
+	int		i;
 
 	head = *a;
 	max = head->index;

@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:24:52 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/22 10:16:09 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:36:18 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_list **src, t_list **dst)
 {
 	t_list	*tmp;
 
-	if(!src || !dst)
+	if (!src || !dst)
 		ft_perror();
 	if (ft_lstsize(src) == 0)
 		return ;
@@ -34,8 +34,6 @@ void	pa(t_list **a, t_list **b)
 
 void	pb(t_list **a, t_list **b)
 {
-
 	push(a, b);
 	write(1, "pb\n", 3);
 }
-

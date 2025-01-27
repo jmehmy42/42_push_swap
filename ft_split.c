@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:54:13 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/24 21:31:35 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/27 20:35:08 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,12 @@ static int	count_words(const char *str, char delimiter)
 static int	find_next_word(const char *str, char delimiter, int *start,
 		int *end)
 {
-
 	*start = *end;
 	while (str[*start] != '\0' && str[*start] == delimiter)
 		(*start)++;
 	*end = *start;
 	while (str[*end] != '\0' && str[*end] != delimiter)
 		(*end)++;
-
 	return (*start < *end);
 }
 
@@ -88,6 +86,8 @@ char	**ft_split(const char *s, char c)
 	if (s == NULL)
 		return (NULL);
 	size = count_words(s, c);
+	if (size == 0)
+		ft_perror();
 	new_s = malloc((size + 1) * sizeof(char *));
 	if (new_s == NULL)
 		return (NULL);
