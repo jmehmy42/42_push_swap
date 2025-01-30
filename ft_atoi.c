@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:09:32 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:34:59 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:30:42 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ bool	is_number(long long num, char *str)
 	}
 	if (num == INT_MAX || num == INT_MIN)
 		return (true);
-	else if ((num == 0 && *str != '0') || num > 2147483647 || num < -2147483648)
+	else if (num > 2147483647 || num < -2147483648)
+		return (false);
+	else if ((num == 0 && str[0] != '0') || (str[0] == '0' && str[1] != '\0')
+		|| str[0] == '+')
 		return (false);
 	else
 		return (true);
@@ -39,15 +42,14 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	if (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
 		num = ((num * 10) + (str[i] - '0'));

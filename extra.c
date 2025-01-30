@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:30:33 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:34:12 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/30 11:13:07 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,3 @@ void	ft_free(t_list **lst)
 		*lst = temp;
 	}
 }
-/*
-void	ft_free(t_list **a)
-{
-	t_list	*head;
-	t_list	*temp;
-
-	head = *a;
-	while (head)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
-	*a = NULL;
-}
-*/

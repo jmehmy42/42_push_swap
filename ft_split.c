@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:54:13 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:35:08 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:50:36 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,24 +98,3 @@ char	**ft_split(const char *s, char c)
 	}
 	return (new_s);
 }
-/*
-int	main(void) {
-	const char *s = "Hello This is ft_split example.";
-	char c = ' ';
-
-	char **res = ft_split(s, c);
-
-	if (res != NULL) {
-		int i = 0;
-		while (res[i] != NULL) {
-			printf("Word %d: %s\n", i + 1, res[i]);
-			free(res[i]);
-			i++;
-		}
-		free(res);
-	} else {
-		printf("memory failed.\n");
-	}
-	return (0);
-}
-*/

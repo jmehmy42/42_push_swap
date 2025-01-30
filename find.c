@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:34:31 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/28 15:06:12 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,59 @@
 
 int	find_min(t_list **a)
 {
-	t_list		*count;
+	t_list		*current;
 	long long	min;
 
 	min = 2147483648;
-	count = *a;
-	if (count == NULL)
+	current = *a;
+	if (current == NULL)
 		return (-1);
-	if (count->next == NULL)
-		return (count->index);
-	while (count != NULL)
+	if (current->next == NULL)
+		return (current->index);
+	while (current != NULL)
 	{
-		if (count->index < min)
-			min = count->index;
-		count = count->next;
+		if (current->index < min)
+			min = current->index;
+		current = current->next;
 	}
 	return (min);
 }
 
 int	find_next_min(t_list **a, long long min)
 {
-	t_list		*count;
+	t_list		*current;
 	long long	next_min;
 
 	next_min = 2147483648;
-	count = *a;
-	if (count == NULL || count->next == NULL)
+	current = *a;
+	if (current == NULL || current->next == NULL)
 		return (-1);
-	while (count != NULL)
+	while (current != NULL)
 	{
-		if (count->index < next_min && count->index > min)
-			next_min = count->index;
-		count = count->next;
+		if (current->index < next_min && current->index > min)
+			next_min = current->index;
+		current = current->next;
 	}
 	return (next_min);
 }
 
 t_list	*find_min_list(t_list **a, long long min)
 {
-	t_list		*count;
+	t_list		*current;
 	t_list		*min_list;
 	long long	next_min;
 
 	next_min = 2147483648;
 	min_list = NULL;
-	count = *a;
-	while (count != NULL)
+	current = *a;
+	while (current != NULL)
 	{
-		if (count->data < next_min && count->data > min)
+		if (current->data < next_min && current->data > min)
 		{
-			next_min = count->data;
-			min_list = count;
+			next_min = current->data;
+			min_list = current;
 		}
-		count = count->next;
+		current = current->next;
 	}
 	return (min_list);
 }
