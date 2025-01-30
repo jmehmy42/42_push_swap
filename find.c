@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/28 15:06:12 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/30 18:03:06 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,20 @@ int	find_next_min(t_list **a, long long min)
 	return (next_min);
 }
 
-t_list	*find_min_list(t_list **a, long long min)
+t_list	*find_smallest_value(t_list **a, long long min)
 {
 	t_list		*current;
 	t_list		*min_list;
-	long long	next_min;
+	long long	next_value;
 
-	next_min = 2147483648;
+	next_value = 2147483648;
 	min_list = NULL;
 	current = *a;
 	while (current != NULL)
 	{
-		if (current->data < next_min && current->data > min)
+		if (current->data < next_value && current->data > min)
 		{
-			next_min = current->data;
+			next_value = current->data;
 			min_list = current;
 		}
 		current = current->next;
