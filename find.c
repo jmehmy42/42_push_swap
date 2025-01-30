@@ -6,13 +6,13 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/30 18:03:06 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/01/30 18:28:44 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min(t_list **a)
+int	find_smallest_index(t_list **a)
 {
 	t_list		*current;
 	long long	min;
