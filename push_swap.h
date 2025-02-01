@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/30 18:27:29 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 12:43:50 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list				*ft_lstnew(int content);
+t_list				*ft_lstnew(int number);
 int					ft_lstsize(t_list **lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
@@ -38,11 +38,11 @@ void				sort_3(t_list **a);
 void				sort_4(t_list **a, t_list **b);
 void				sort_5(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b);
-int					find_smallest_index(t_list **a);
+int					find_small_index(t_list **a);
 int					find_next_min(t_list **a, long long min);
 int					find_distance(t_list **a, int min);
 t_list				*find_smallest_value(t_list **a, long long min);
-bool				is_valid_number(long long num, char *str);
+bool				is_valid_number(char *str);
 int					find_bits(t_list **a);
 void				assign_indexes(t_list **a);
 void				move_min_to_top(t_list **a, int min);
