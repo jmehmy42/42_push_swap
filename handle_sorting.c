@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:43:36 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:35:40 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 15:23:32 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	sort_3(t_list **a)
 	int		next_min;
 
 	head = *a;
-	min = find_min(a);
-	next_min = find_next_min(a, min);
+	min = find_small_index(a);
+	next_min = find_next_small_index(a, min);
 	if (check_sort(a))
 		return ;
 	if (head->index == min)
@@ -45,7 +45,7 @@ void	sort_4(t_list **a, t_list **b)
 
 	if (check_sort(a))
 		return ;
-	distance = find_distance(a, find_min(a));
+	distance = find_distance(a, find_small_index(a));
 	if (distance == 1 || distance == 2)
 	{
 		ra(a);
@@ -65,7 +65,7 @@ void	sort_5(t_list **a, t_list **b)
 {
 	int	distance;
 
-	distance = find_distance(a, find_min(a));
+	distance = find_distance(a, find_small_index(a));
 	if (distance == 1 || distance == 2)
 	{
 		ra(a);
