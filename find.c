@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/31 12:34:58 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 15:25:40 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,57 @@
 
 int	find_small_index(t_list **a)
 {
-	t_list		*current;
-	long long	min;
+	t_list		*current_num;
+	long long	small_index;
 
-	min = 2147483648;
-	current = *a;
-	if (current == NULL)
+	small_index = 2147483648;
+	current_num = *a;
+	if (!current_num)
 		return (-1);
-	if (current->next == NULL)
-		return (current->index);
-	while (current != NULL)
+	while (current_num != NULL)
 	{
-		if (current->index < min)
-			min = current->index;
-		current = current->next;
+		if (current_num->index < small_index)
+			small_index = current_num->index;
+		current_num = current_num->next;
 	}
-	return (min);
+	return (small_index);
 }
 
-int	find_next_min(t_list **a, long long min)
+int	find_next_small_index(t_list **a, long long min)
 {
-	t_list		*current;
+	t_list		*current_num;
 	long long	next_min;
 
 	next_min = 2147483648;
-	current = *a;
-	if (current == NULL || current->next == NULL)
+	current_num = *a;
+	if (current_num == NULL || current_num->next == NULL)
 		return (-1);
-	while (current != NULL)
+	while (current_num != NULL)
 	{
-		if (current->index < next_min && current->index > min)
-			next_min = current->index;
-		current = current->next;
+		if (current_num->index < next_min && current_num->index > min)
+			next_min = current_num->index;
+		current_num = current_num->next;
 	}
 	return (next_min);
 }
 
 t_list	*find_smallest_value(t_list **a, long long min)
 {
-	t_list		*current;
+	t_list		*current_num;
 	t_list		*min_list;
 	long long	next_value;
 
 	next_value = 2147483648;
 	min_list = NULL;
-	current = *a;
-	while (current != NULL)
+	current_num = *a;
+	while (current_num != NULL)
 	{
-		if (current->data < next_value && current->data > min)
+		if (current_num->data < next_value && current_num->data > min)
 		{
-			next_value = current->data;
-			min_list = current;
+			next_value = current_num->data;
+			min_list = current_num;
 		}
-		current = current->next;
+		current_num = current_num->next;
 	}
 	return (min_list);
 }
