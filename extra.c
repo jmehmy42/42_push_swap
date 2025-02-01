@@ -6,20 +6,20 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:30:33 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/30 11:13:07 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 15:27:28 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int number)
 {
 	t_list	*node;
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
-	node->data = content;
+	node->data = number;
 	node->next = NULL;
 	return (node);
 }
