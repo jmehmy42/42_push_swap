@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:33:53 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 15:28:04 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	assign_indexes(t_list **a)
 	int		i;
 
 	i = 0;
-	head = find_min_list(a, -2147483649);
+	head = find_smallest_value(a, -2147483649);
 	while (head)
 	{
 		head->index = i;
-		head = find_min_list(a, head->data);
+		head = find_smallest_value(a, head->data);
 		i++;
 	}
 }
@@ -46,15 +46,15 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		if (s1[i] < s2[i])
-			return (-1);
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
 
 void	find_repeats(char **str)
