@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/01 12:43:50 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 15:24:01 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void				sort_4(t_list **a, t_list **b);
 void				sort_5(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b);
 int					find_small_index(t_list **a);
-int					find_next_min(t_list **a, long long min);
+int					find_next_small_index(t_list **a, long long min);
 int					find_distance(t_list **a, int min);
 t_list				*find_smallest_value(t_list **a, long long min);
 bool				is_valid_number(char *str);
