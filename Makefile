@@ -2,8 +2,8 @@ NAME	= push_swap
 CC 		= cc
 CFLAGS	= -Wextra -Wall -Werror
 
-SRCS	= added_functions.c error.c find.c ft_atoi.c \
-		extra.c ft_split.c handle_sorting.c push.c rotate.c swap.c \
+SRCS	= extra.c  extra_2.c error.c find.c ft_atoi.c \
+		ft_split.c handle_sorting.c push.c rotate.c swap.c \
 		reverse_rotate.c push_swap.c radix.c
 
 OBJ = $(SRCS:.c=.o)
