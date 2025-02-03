@@ -6,31 +6,36 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:09:32 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/30 16:30:42 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/01 12:37:08 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	is_number(long long num, char *str)
+bool	is_valid_number(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[++i])
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] > 57 || str[i] < 48)
-			ft_perror();
+		if (str[i + 1] == '0' && str[i + 2] == '\0')
+			return (false);
+		if (str[i + 1] == '\0')
+			return (false);
+		i++;
 	}
-	if (num == INT_MAX || num == INT_MIN)
-		return (true);
-	else if (num > 2147483647 || num < -2147483648)
+	if (str[0] == '+')
 		return (false);
-	else if ((num == 0 && str[0] != '0') || (str[0] == '0' && str[1] != '\0')
-		|| str[0] == '+')
+	if (str[i] == '0' && str[i + 1] != '\0')
 		return (false);
-	else
-		return (true);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (false);
+		i++;
+	}
+	return (true);
 }
 
 int	ft_atoi(char *str)
@@ -50,12 +55,14 @@ int	ft_atoi(char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	if (!is_valid_number(str))
+		ft_perror();
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = ((num * 10) + (str[i] - '0'));
+		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
-	if (!is_number(num * sign, str))
+	if (num * sign > INT_MAX || num * sign < INT_MIN)
 		ft_perror();
-	return (num * sign);
+	return ((num * sign));
 }
