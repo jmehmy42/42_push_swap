@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   added_functions.c                                  :+:      :+:    :+:   */
+/*   extra_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/01 15:28:04 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/07 19:53:50 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_min_to_top(t_list **a, int min)
+void	move_small_to_top(t_list **a, int min_index)
 {
 	t_list	*head;
 
 	head = *a;
-	if (head->next->index == min)
+	if (head->next->index == min_index)
 		ra(a);
 	else
 	{

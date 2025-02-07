@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/01 15:24:01 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/07 20:29:40 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void				sort_4(t_list **a, t_list **b);
 void				sort_5(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b);
 int					find_small_index(t_list **a);
-int					find_next_small_index(t_list **a, long long min);
+int					find_next_small_index(t_list **a, long long min_index);
 int					find_distance(t_list **a, int min);
-t_list				*find_smallest_value(t_list **a, long long min);
+t_list				*find_smallest_value(t_list **a, long long small_number);
 bool				is_valid_number(char *str);
 int					find_bits(t_list **a);
 void				assign_indexes(t_list **a);
-void				move_min_to_top(t_list **a, int min);
+void				move_small_to_top(t_list **a, int min_index);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_perror(void);
 void				find_repeats(char **list);

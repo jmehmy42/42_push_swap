@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/01 15:25:40 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/07 20:29:25 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	find_small_index(t_list **a)
 	return (small_index);
 }
 
-int	find_next_small_index(t_list **a, long long min)
+int	find_next_small_index(t_list **a, long long min_index)
 {
 	t_list		*current_num;
 	long long	next_min;
@@ -41,14 +41,14 @@ int	find_next_small_index(t_list **a, long long min)
 		return (-1);
 	while (current_num != NULL)
 	{
-		if (current_num->index < next_min && current_num->index > min)
+		if (current_num->index < next_min && current_num->index > min_index)
 			next_min = current_num->index;
 		current_num = current_num->next;
 	}
 	return (next_min);
 }
 
-t_list	*find_smallest_value(t_list **a, long long min)
+t_list	*find_smallest_value(t_list **a, long long small_number)
 {
 	t_list		*current_num;
 	t_list		*min_list;
@@ -59,7 +59,7 @@ t_list	*find_smallest_value(t_list **a, long long min)
 	current_num = *a;
 	while (current_num != NULL)
 	{
-		if (current_num->data < next_value && current_num->data > min)
+		if (current_num->data < next_value && current_num->data > small_number)
 		{
 			next_value = current_num->data;
 			min_list = current_num;

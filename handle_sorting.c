@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:43:36 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/01 15:23:32 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/07 20:28:57 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 void	sort_3(t_list **a)
 {
 	t_list	*head;
-	int		min;
-	int		next_min;
+	int		min_index;
+	int		next_min_index;
 
 	head = *a;
-	min = find_small_index(a);
-	next_min = find_next_small_index(a, min);
+	min_index = find_small_index(a);
+	next_min_index = find_next_small_index(a, min_index);
 	if (check_sort(a))
 		return ;
-	if (head->index == min)
+	if (head->index == min_index)
 	{
 		rra(a);
 		sa(a);
 	}
-	else if (head->index == next_min)
+	else if (head->index == next_min_index)
 	{
-		if (head->next->index == min)
+		if (head->next->index == min_index)
 			sa(a);
 		else
 			rra(a);
 	}
 	else
-		move_min_to_top(a, min);
+		move_small_to_top(a, min_index);
 }
 
 void	sort_4(t_list **a, t_list **b)
