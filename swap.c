@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:09:58 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/04 20:40:05 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/08 11:00:37 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_list **stack)
 
 	if (!stack)
 		ft_perror();
-	if (!stack[0] || !(* stack)->next)
+	if (!stack[0] || !(*stack)->next)
 		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;

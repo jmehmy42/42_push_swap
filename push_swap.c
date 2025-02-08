@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:34:57 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/30 15:02:23 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/08 11:03:30 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,7 @@ int	process_multiple_inputs(t_list **a, char **list)
 		ft_lstadd_back(a, new);
 		i++;
 	}
-	i -= 1;
-	return (i);
-}
-
-int	check_sort(t_list **a)
-{
-	t_list	*check;
-
-	check = *a;
-	while (check->next != NULL)
-	{
-		if (check->data > check->next->data)
-			return (0);
-		check = check->next;
-	}
-	return (1);
+	return (i - 1);
 }
 
 int	main(int ac, char **av)

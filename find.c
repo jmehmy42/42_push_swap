@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/07 20:29:25 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/08 13:02:05 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,20 @@ int	find_small_index(t_list **a)
 int	find_next_small_index(t_list **a, long long min_index)
 {
 	t_list		*current_num;
-	long long	next_min;
+	long long	next_small_index;
 
-	next_min = 2147483648;
+	next_small_index = 2147483648;
 	current_num = *a;
 	if (current_num == NULL || current_num->next == NULL)
 		return (-1);
 	while (current_num != NULL)
 	{
-		if (current_num->index < next_min && current_num->index > min_index)
-			next_min = current_num->index;
+		if (current_num->index < next_small_index
+			&& current_num->index > min_index)
+			next_small_index = current_num->index;
 		current_num = current_num->next;
 	}
-	return (next_min);
+	return (next_small_index);
 }
 
 t_list	*find_smallest_value(t_list **a, long long small_number)
