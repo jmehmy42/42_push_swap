@@ -102,11 +102,10 @@ int	find_bits(t_list **a)
 			max = head->index;
 		head = head->next;
 	}
-	while (max / 2 != 0)
+	while (max > 0)
 	{
 		max = max / 2;
 		i++;
 	}
-	i++;
 	return (i);
 }
