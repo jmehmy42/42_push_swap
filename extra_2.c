@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/08 14:39:51 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/11 19:56:09 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,22 @@ void	assign_indexes(t_list **a)
 	}
 }
 
-void	move_small_to_top(t_list **a, int min_index)
+int	big_number(long index, t_list *number)
 {
-	t_list	*head;
+	t_list	*second;
+	t_list	*third;
+	int		count;
 
-	head = *a;
-	if (head->next->index == min_index)
-		ra(a);
-	else
-	{
-		sa(a);
-		rra(a);
-	}
+	count = 0;
+	second = number->next;
+	third = second->next;
+	if (number->index < index)
+		count++;
+	if (second->index < index)
+		count++;
+	if (third->index < index)
+		count++;
+	if (count >= 2)
+		return (1);
+	return (0);
 }

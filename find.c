@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:06 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/10 17:59:27 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/11 19:17:36 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,41 @@
 
 int	find_small_index(t_list **a)
 {
-	t_list		*current_num;
+	t_list		*current;
 	long long	small_index;
 
 	small_index = 2147483648;
-	current_num = *a;
-	if (!current_num)
+	current = *a;
+	if (!current)
 		return (-1);
-	while (current_num != NULL)
+	while (current != NULL)
 	{
-		if (current_num->index < small_index)
-			small_index = current_num->index;
-		current_num = current_num->next;
+		if (current->index < small_index)
+			small_index = current->index;
+		current = current->next;
 	}
 	return (small_index);
 }
 
-int	find_next_small_index(t_list **a, long long min_index)
-{
-	t_list		*current_num;
-	long long	next_small_index;
-
-	next_small_index = 2147483648;
-	current_num = *a;
-	if (current_num == NULL || current_num->next == NULL)
-		return (-1);
-	while (current_num != NULL)
-	{
-		if (current_num->index < next_small_index
-			&& current_num->index > min_index)
-			next_small_index = current_num->index;
-		current_num = current_num->next;
-	}
-	return (next_small_index);
-}
-
 t_list	*find_smallest_value(t_list **a, long long small_number)
 {
-	t_list		*current_num;
-	t_list		*min_list;
-	long long	next_value;
+	t_list		*current;
+	t_list		*smallest_node;
+	long long	smallest_value;
 
-	next_value = 2147483648;
-	min_list = NULL;
-	current_num = *a;
-	while (current_num != NULL)
+	smallest_value = 2147483648;
+	smallest_node = NULL;
+	current = *a;
+	while (current != NULL)
 	{
-		if (current_num->data < next_value && current_num->data > small_number)
+		if (current->data < smallest_value && current->data > small_number)
 		{
-			next_value = current_num->data;
-			min_list = current_num;
+			smallest_value = current->data;
+			smallest_node = current;
 		}
-		current_num = current_num->next;
+		current = current->next;
 	}
-	return (min_list);
+	return (smallest_node);
 }
 
 int	find_distance(t_list **a, int c)
