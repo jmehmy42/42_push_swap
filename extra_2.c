@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/11 19:56:09 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/15 11:25:01 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	assign_indexes(t_list **a)
 	}
 }
 
-int	big_number(long index, t_list *number)
+int	big_number(long value, t_list *number)
 {
 	t_list	*second;
 	t_list	*third;
@@ -83,11 +83,11 @@ int	big_number(long index, t_list *number)
 	count = 0;
 	second = number->next;
 	third = second->next;
-	if (number->index < index)
+	if (number->data < value)
 		count++;
-	if (second->index < index)
+	if (second->data < value)
 		count++;
-	if (third->index < index)
+	if (third->data < value)
 		count++;
 	if (count >= 2)
 		return (1);

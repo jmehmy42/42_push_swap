@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:30:33 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/10 14:18:20 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/15 10:08:05 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ int	ft_lstsize(t_list **lst)
 	return (i);
 }
 
-void	ft_free(t_list **lst)
+void	ft_free(t_list **stack)
 {
 	t_list	*temp;
 
-	while (*lst)
+	while (*stack)
 	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
 	}
 }
