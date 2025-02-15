@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/15 11:25:01 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/15 10:29:26 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ int	big_number(long value, t_list *number)
 	count = 0;
 	second = number->next;
 	third = second->next;
-	if (number->data < value)
+	if (number->index < value)
 		count++;
-	if (second->data < value)
+	if (second->index < value)
 		count++;
-	if (third->data < value)
+	if (third->index < value)
 		count++;
 	if (count >= 2)
 		return (1);

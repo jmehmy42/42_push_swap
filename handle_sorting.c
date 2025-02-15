@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:43:36 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/15 11:24:17 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/11 19:51:40 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	sort_3(t_list **a)
 	t_list	*head;
 
 	head = *a;
-	if (big_number(head->data, head))
+	if (big_number(head->index, head))
 		ra(a);
-	else if (big_number(head->next->data, head))
+	else if (big_number(head->next->index, head))
 		rra(a);
 	head = *a;
-	if (head->data > head->next->data)
+	if (head->index > head->next->index)
 		sa(a);
 }
 
