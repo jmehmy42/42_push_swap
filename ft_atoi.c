@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:09:32 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/16 23:09:08 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/16 23:30:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	ft_atoi(char *str, t_list **a, char **str2)
 	if (num * sign > INT_MAX || num * sign < INT_MIN)
 	{
 		free_string(str2);
-		ft_perror();
+		ft_perror2(a);
 	}
 	return ((num * sign));
 }
