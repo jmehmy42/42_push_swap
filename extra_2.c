@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extra_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/15 10:29:26 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/16 22:54:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	find_repeats(char **str)
+void	find_repeats_2(char **str)
 {
 	int	i;
 	int	j;
@@ -74,7 +74,7 @@ void	assign_indexes(t_list **a)
 	}
 }
 
-int	big_number(long value, t_list *number)
+int	big_number(long index, t_list *number)
 {
 	t_list	*second;
 	t_list	*third;
@@ -83,11 +83,11 @@ int	big_number(long value, t_list *number)
 	count = 0;
 	second = number->next;
 	third = second->next;
-	if (number->index < value)
+	if (number->index < index)
 		count++;
-	if (second->index < value)
+	if (second->index < index)
 		count++;
-	if (third->index < value)
+	if (third->index < index)
 		count++;
 	if (count >= 2)
 		return (1);

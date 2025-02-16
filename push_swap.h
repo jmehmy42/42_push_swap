@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/11 19:53:42 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/16 23:09:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,17 @@ void				sort_4(t_list **a, t_list **b);
 void				sort_5(t_list **a, t_list **b);
 void				radix(t_list **a, t_list **b);
 int					find_small_index(t_list **a);
+int					find_next_small_index(t_list **a, long long min_index);
 int					find_distance(t_list **a, int min);
 t_list				*find_smallest_value(t_list **a, long long small_number);
 bool				is_valid_number(char *str);
 int					find_bits(t_list **a);
 void				assign_indexes(t_list **a);
-int					big_number(long index, t_list *a);
+int				big_number(long index, t_list *number);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_perror(void);
-void				find_repeats(char **list);
+void				find_repeats_1(char **str);
+void				find_repeats_2(char **str);
 int					check_sort(t_list **a);
 void				swap(t_list **a);
 void				sa(t_list **a);
@@ -65,8 +67,11 @@ void				rra(t_list **a);
 void				rrb(t_list **b);
 void				rrr(t_list **a, t_list **b);
 void				ft_free(t_list **a);
-int					ft_atoi(char *str);
 char				**ft_split(const char *s, char c);
 void				free_string(char **str);
+void				ft_perror2(t_list **a);
+int					ft_atoi_2(char *str, t_list **a);
+int					ft_atoi(char *str, t_list **a, char **str2);
+
 
 #endif

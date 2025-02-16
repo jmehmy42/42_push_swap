@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:29:00 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/01/27 20:39:18 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/16 08:16:18 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	reverse_rotate(t_list **stack)
 	t_list	*last;
 
 	if (!stack)
-		ft_perror();
+		ft_perror2(stack);
 	if (ft_lstsize(stack) < 2)
 		return ;
 	head = *stack;
