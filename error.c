@@ -39,25 +39,3 @@ void	free_string(char **str)
 	}
 	free(str);
 }
-
-void	find_repeats_1(char **str)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = i + 1;
-		while (str[j])
-		{
-			if (ft_strcmp(str[i], str[j]) == 0)
-			{
-				free_string(str);
-				ft_perror();
-			}
-			j++;
-		}
-		i++;
-	}
-}
