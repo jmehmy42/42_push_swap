@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extra_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:07:50 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/16 22:54:49 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/17 19:05:13 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	find_repeats(char **str, int should_free)
+void	find_repeats(char **str, int need_clean)
 {
 	int	i;
 	int	j;
@@ -39,9 +39,10 @@ void	find_repeats(char **str, int should_free)
 		{
 			if (ft_strcmp(str[i], str[j]) == 0)
 			{
-				if(should_free}
+				if (need_clean)
 					free_string(str);
 				ft_perror();
+			}
 			j++;
 		}
 		i++;

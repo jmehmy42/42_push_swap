@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:34:57 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/16 23:08:48 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/17 20:19:35 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ int	process_single_input(t_list **a, char *list)
 		new = ft_lstnew(ft_atoi(str[i], a, str));
 		if (!new)
 		{
-			//ft_free(a);
+			ft_free(a);
 			ft_perror2(a);
 		}
 		ft_lstadd_back(a, new);
 		i++;
 	}
+	free_string(str);
 	return (i);
 }
 
@@ -49,7 +50,6 @@ int	process_multiple_inputs(t_list **a, char **list)
 		new = ft_lstnew(ft_atoi_2(list[i], a));
 		if (!new)
 		{
-			//ft_free(a);
 			ft_perror2(a);
 		}
 		ft_lstadd_back(a, new);

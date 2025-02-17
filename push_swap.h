@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/16 23:09:24 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/17 20:22:17 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_list				*find_smallest_value(t_list **a, long long small_number);
 bool				is_valid_number(char *str);
 int					find_bits(t_list **a);
 void				assign_indexes(t_list **a);
-int				big_number(long index, t_list *number);
+int					big_number(long index, t_list *number);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_perror(void);
 void				find_repeats(char **str, int should_free);
@@ -71,6 +71,5 @@ void				free_string(char **str);
 void				ft_perror2(t_list **a);
 int					ft_atoi_2(char *str, t_list **a);
 int					ft_atoi(char *str, t_list **a, char **str2);
-
 
 #endif
