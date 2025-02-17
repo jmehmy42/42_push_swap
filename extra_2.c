@@ -26,7 +26,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	find_repeats_2(char **str)
+void	find_repeats(char **str, int should_free)
 {
 	int	i;
 	int	j;
@@ -38,6 +38,9 @@ void	find_repeats_2(char **str)
 		while (str[j])
 		{
 			if (ft_strcmp(str[i], str[j]) == 0)
+			{
+				if(should_free}
+					free_string(str);
 				ft_perror();
 			j++;
 		}
