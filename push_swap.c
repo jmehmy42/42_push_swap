@@ -22,7 +22,7 @@ int	process_single_input(t_list **a, char *list)
 	str = ft_split(list, ' ');
 	if (!str)
 		return (-1);
-	find_repeats_1(str);
+	find_repeats(str, 1);
 	while (str[i])
 	{
 		new = ft_lstnew(ft_atoi(str[i], a, str));
@@ -43,7 +43,7 @@ int	process_multiple_inputs(t_list **a, char **list)
 	int		i;
 
 	i = 1;
-	find_repeats_2(list);
+	find_repeats(list, 0);
 	while (list[i])
 	{
 		new = ft_lstnew(ft_atoi_2(list[i], a));
