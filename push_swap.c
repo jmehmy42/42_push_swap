@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 11:34:57 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/17 20:19:35 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/18 23:12:09 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int	process_single_input(t_list **a, char *list)
 	{
 		new = ft_lstnew(ft_atoi(str[i], a, str));
 		if (!new)
-		{
-			ft_free(a);
 			ft_perror2(a);
-		}
 		ft_lstadd_back(a, new);
 		i++;
 	}
@@ -47,11 +44,9 @@ int	process_multiple_inputs(t_list **a, char **list)
 	find_repeats(list, 0);
 	while (list[i])
 	{
-		new = ft_lstnew(ft_atoi_2(list[i], a));
+		new = ft_lstnew(ft_atoi(list[i], a, 0));
 		if (!new)
-		{
 			ft_perror2(a);
-		}
 		ft_lstadd_back(a, new);
 		i++;
 	}

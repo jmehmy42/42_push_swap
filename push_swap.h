@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/17 20:22:17 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/18 23:12:40 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void				assign_indexes(t_list **a);
 int					big_number(long index, t_list *number);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_perror(void);
-void				find_repeats(char **str, int should_free);
+void				find_repeats(char **str, int need_clean);
 int					check_sort(t_list **a);
 void				swap(t_list **a);
 void				sa(t_list **a);
@@ -69,7 +69,8 @@ void				ft_free(t_list **a);
 char				**ft_split(const char *s, char c);
 void				free_string(char **str);
 void				ft_perror2(t_list **a);
-int					ft_atoi_2(char *str, t_list **a);
 int					ft_atoi(char *str, t_list **a, char **str2);
+void				exit_invalid_number(char *str, t_list **a, char **str2);
+void				check_overflow(long num, t_list **a, char **str2);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:09:32 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/16 23:30:57 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/18 23:08:02 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,33 +38,24 @@ bool	is_valid_number(char *str)
 	return (true);
 }
 
-int	ft_atoi_2(char *str, t_list **a)
+void	exit_invalid_number(char *str, t_list **a, char **str2)
 {
-	int			i;
-	int			sign;
-	long long	num;
-
-	i = 0;
-	sign = 1;
-	num = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
 	if (!is_valid_number(str))
-		ft_perror2(a);
-	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	if (num * sign > INT_MAX || num * sign < INT_MIN)
+		if (str2)
+			free_string(str2);
 		ft_perror2(a);
-	return ((num * sign));
+	}
+}
+
+void	check_overflow(long num, t_list **a, char **str2)
+{
+	if (num > INT_MAX || num < INT_MIN)
+	{
+		if (str2)
+			free_string(str2);
+		ft_perror2(a);
+	}
 }
 
 int	ft_atoi(char *str, t_list **a, char **str2)
@@ -80,24 +71,12 @@ int	ft_atoi(char *str, t_list **a, char **str2)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
 	}
-	if (!is_valid_number(str))
-	{
-		free_string(str2);
-		ft_perror2(a);
-	}
+	exit_invalid_number(str, a, str2);
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	if (num * sign > INT_MAX || num * sign < INT_MIN)
-	{
-		free_string(str2);
-		ft_perror2(a);
-	}
+		num = (num * 10) + (str[i++] - '0');
+	check_overflow(num * sign, a, str2);
 	return ((num * sign));
 }
