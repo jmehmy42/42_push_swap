@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:09:32 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/18 23:08:02 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/19 18:05:28 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	exit_invalid_number(char *str, t_list **a, char **str2)
 	}
 }
 
-void	check_overflow(long num, t_list **a, char **str2)
+void	check_overflow(long long num, t_list **a, char **str2)
 {
 	if (num > INT_MAX || num < INT_MIN)
 	{

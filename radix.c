@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:04:13 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/18 23:20:38 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/19 17:47:31 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	radix(t_list **a, t_list **b)
 
 	if (!a)
 		ft_perror2(a);
-	else if (!b)
-		ft_perror2(b);
 	size = ft_lstsize(a);
 	bits = find_bits(a);
 	i = 0;

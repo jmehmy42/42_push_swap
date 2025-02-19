@@ -6,7 +6,7 @@
 /*   By: jmehmy <jmehmy@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:45:18 by jmehmy            #+#    #+#             */
-/*   Updated: 2025/02/18 23:12:40 by jmehmy           ###   ########.fr       */
+/*   Updated: 2025/02/19 18:06:13 by jmehmy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void				free_string(char **str);
 void				ft_perror2(t_list **a);
 int					ft_atoi(char *str, t_list **a, char **str2);
 void				exit_invalid_number(char *str, t_list **a, char **str2);
-void				check_overflow(long num, t_list **a, char **str2);
+void				check_overflow(long long num, t_list **a, char **str2);
 
 #endif
