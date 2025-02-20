@@ -20,7 +20,7 @@ bool	is_valid_number(char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i + 1] == '0' && str[i + 2] == '\0')
-			return (false);
+			return (true);
 		if (str[i + 1] == '\0')
 			return (false);
 		i++;
